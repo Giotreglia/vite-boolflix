@@ -19,11 +19,18 @@ export default {
   },
   methods: {
     search() {
-      axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${store.api_key}&query=${store.searchText}`)
+      axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${store.api_key}&language=it_IT&query=${store.searchText}`)
         .then(response => {
-          store.searchResults = response.data.results;
-          console.log(store.searchResults);
+          store.searchMovieResults = response.data.results;
+          console.log(store.searchMovieResults);
+        });
+
+      axios.get(`https://api.themoviedb.org/3/search/tv?api_key=${store.api_key}&language=it_IT&query=${store.searchText}`)
+        .then(response => {
+          store.searchSeriesResults = response.data.results;
+          console.log(store.searchSeriesResults);
         })
+
     }
   },
 }
