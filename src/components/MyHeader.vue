@@ -1,6 +1,12 @@
 <script>
+import { store } from '../store';
 export default {
-    name: 'MyHeader'
+    name: 'MyHeader',
+    data() {
+        return {
+            store
+        }
+    },
 }
 </script>
 
@@ -11,8 +17,8 @@ export default {
         </div>
 
         <div id="search-container">
-            <input type="text" placeholder="Search">
-            <button>Search</button>
+            <input type="text" placeholder="Search" v-model="store.searchText">
+            <button @click="$emit('doSearch')">Search</button>
         </div>
     </header>
 </template>
@@ -33,5 +39,29 @@ header {
 #logo {
     color: $color-primary;
     font-size: 60px;
+}
+
+#search-container {
+    display: flex;
+    align-items: center;
+
+    input {
+        height: 30px;
+        padding: 5px;
+        background-color: $color-secondary;
+        color: white;
+        border: solid 1px white;
+    }
+
+    button {
+        height: 30px;
+        padding: 5px 20px;
+        margin-left: 10px;
+        background-color: $color-primary;
+        color: white;
+        border: 0;
+        border-radius: 5px;
+        cursor: pointer;
+    }
 }
 </style>
