@@ -7,12 +7,15 @@
     box-sizing: border-box;
 }
 
+html {
+    background-color: $color-secondary;
+}
+
 body {
     font-family: "Bebas Neue", cursive;
 }
 
 main {
-    background-color: $color-secondary;
     height: 100%;
 }
 
@@ -49,7 +52,7 @@ h3 {
 
 .flip-card {
     background-color: transparent;
-    width: calc(100% / 6);
+    width: calc(100% / 5);
     height: 500px;
     perspective: 1000px;
     /* Remove this if you don't want the 3D effect */
@@ -86,6 +89,7 @@ h3 {
     color: black;
 
     img {
+        height: 100%;
         width: 100%;
     }
 }

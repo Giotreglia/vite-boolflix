@@ -48,7 +48,8 @@ header {
 
 
     input {
-        height: 30px;
+        height: 35px;
+        width: 200px;
         padding: 5px;
         background-color: $color-secondary;
         color: white;
@@ -57,8 +58,8 @@ header {
     }
 
     button {
-        height: 30px;
-        padding: 5px 20px;
+        height: 35px;
+        padding: 0 20px;
         margin-left: 10px;
         background-color: $color-primary;
         color: white;

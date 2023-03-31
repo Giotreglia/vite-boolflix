@@ -10,10 +10,6 @@ export default {
     methods: {
         getImagePath: function (img) {
             return new URL(`../assets/${img}`, import.meta.url).href;
-        },
-
-        starsShower() {
-            return Math.floor(movie.vote_average / 2) + 1;
         }
     },
 }
