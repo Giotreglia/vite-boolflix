@@ -34,6 +34,7 @@ header {
     justify-content: space-between;
     padding: 10px 30px;
     align-items: center;
+
 }
 
 #logo {
@@ -45,12 +46,14 @@ header {
     display: flex;
     align-items: center;
 
+
     input {
         height: 30px;
         padding: 5px;
         background-color: $color-secondary;
         color: white;
         border: solid 1px white;
+        font-family: "Bebas Neue", cursive;
     }
 
     button {
@@ -62,6 +65,7 @@ header {
         border: 0;
         border-radius: 5px;
         cursor: pointer;
+        font-family: "Bebas Neue", cursive;
     }
 }
 </style>

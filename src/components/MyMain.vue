@@ -17,8 +17,10 @@ export default {
 </script>
 
 <template>
-    <MovieCard />
-    <SerieCard />
+    <main>
+        <MovieCard />
+        <SerieCard />
+    </main>
 </template>
 
 <style lang="scss" scoped>

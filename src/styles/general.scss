@@ -1,21 +1,98 @@
+@use '../styles/partials/variables' as *;
+@import "@fontsource/bebas-neue";
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-html {
+body {
     font-family: "Bebas Neue", cursive;
+}
+
+main {
+    background-color: $color-secondary;
+    height: 100%;
 }
 
 .flag {
     width: 30px
 }
 
+h3 {
+    margin: 0 50px;
+    font-size: 40px;
+    color: white;
+}
+
 .stars {
     color: gold;
 }
 
+.cards-container {
+    list-style: none;
+    width: 90vw;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 
+.card {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    position: relative;
+    cursor: pointer;
+}
 
-@import "@fontsource/bebas-neue";
+.flip-card {
+    background-color: transparent;
+    width: calc(100% / 6);
+    height: 500px;
+    perspective: 1000px;
+    /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    /* Safari */
+    backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+    color: black;
+
+    img {
+        width: 100%;
+    }
+}
+
+/* Style the back side */
+.flip-card-back {
+    background-color: $color-secondary;
+    color: white;
+    transform: rotateY(180deg);
+}
