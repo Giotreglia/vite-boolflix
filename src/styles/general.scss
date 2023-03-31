@@ -99,4 +99,10 @@ h3 {
     background-color: $color-secondary;
     color: white;
     transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    overflow-y: auto;
+    padding: 20px;
 }
