@@ -3,7 +3,7 @@ import { store } from '../store';
 export default {
     data() {
         return {
-            name: 'MovieCard',
+            name: 'SerieCard',
             store
         }
     },
@@ -20,12 +20,12 @@ export default {
 </script>
 
 <template>
-    <h3>Film</h3>
-    <ul v-if="store.searchMovieResults">
-        <li v-for="(movie, i) in store.searchMovieResults" :key="i">
+    <h3>Serie tv</h3>
+    <ul v-if="store.searchSeriesResults">
+        <li v-for="(movie, i) in store.searchSeriesResults" :key="i">
             <img :src="`https://image.tmdb.org/t/p/w342${movie.poster_path}`" :alt="movie.original_name">
-            {{ movie.title }} /
-            {{ movie.original_title }} /
+            {{ movie.name }} /
+            {{ movie.original_name }} /
             <span class="stars" v-for="stars in Math.floor(movie.vote_average / 2) + 1">
                 <i class="fa-solid fa-star"></i>
             </span>

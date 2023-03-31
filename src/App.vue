@@ -7,7 +7,7 @@ import MyMain from './components/MyMain.vue';
 export default {
   components: {
     MyHeader,
-    MyMain
+    MyMain,
   },
 
   /* https://api.themoviedb.org/3/search/movie?api_key={store.api_key}={} */
