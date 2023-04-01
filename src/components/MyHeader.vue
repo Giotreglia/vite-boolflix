@@ -13,7 +13,7 @@ export default {
 <template>
     <header>
         <div id="logo-container">
-            <h1 id="logo">Boolflix</h1>
+            <img src="../assets/header-logo.png" alt="logo">
         </div>
 
         <div id="search-container">
@@ -68,5 +68,35 @@ header {
         cursor: pointer;
         font-family: "Bebas Neue", cursive;
     }
+}
+
+#logo-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding: 20px;
+
+    img {
+        display: block;
+        height: 50px;
+        width: 190px;
+    }
+}
+
+/* .rounded {
+    position: absolute;
+    bottom: 15px;
+    left: 0;
+    border-radius: 50%;
+    width: 105%;
+    background-color: $color-secondary;
+    height: 12px;
+
+} */
+
+#logo {
+    transform-origin: bottom;
+    transform: rotate(-6deg);
 }
 </style>
