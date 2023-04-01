@@ -15,7 +15,14 @@ export default {
         <div id="logo-container">
             <img src="../assets/header-logo.png" alt="logo">
         </div>
-
+        <ul class="nav-list">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Serie TV</a></li>
+            <li><a href="#">Film</a></li>
+            <li><a href="#">Originali</a></li>
+            <li><a href="#">Aggiunti di recente</a></li>
+            <li><a href="#">La mia lista</a></li>
+        </ul>
         <div id="search-container">
             <input type="text" placeholder="Search" v-model="store.searchText">
             <button @click="$emit('doSearch')">Search</button>
@@ -84,19 +91,26 @@ header {
     }
 }
 
-/* .rounded {
-    position: absolute;
-    bottom: 15px;
-    left: 0;
-    border-radius: 50%;
-    width: 105%;
-    background-color: $color-secondary;
-    height: 12px;
-
-} */
-
 #logo {
     transform-origin: bottom;
     transform: rotate(-6deg);
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    color: white;
+    gap: 30px;
+    font-size: 20px;
+
+    a {
+        text-decoration: none;
+        color: white;
+        cursor: pointer;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
 }
 </style>

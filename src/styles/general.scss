@@ -24,13 +24,13 @@ main {
 }
 
 h3 {
-    margin: 0 50px;
+    margin: 20px 85px;
     font-size: 40px;
     color: white;
 }
 
 .stars {
-    color: gold;
+    color: rgb(197, 168, 0);
 }
 
 .cards-container {
@@ -38,14 +38,34 @@ h3 {
     width: 90vw;
     margin: auto;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    &::-webkit-scrollbar {
+        width: 100vw;
+        height: 6px;
+        cursor: pointer;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: $color-secondary;
+        border-radius: 10px;
+
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $color-primary;
+        border-radius: 10px;
+        border: 1px solid $color-secondary;
+
+    }
 }
 
 .card {
     display: flex;
     flex-direction: column;
-    padding: 10px;
+    flex-shrink: 0;
+    padding: 5px;
     position: relative;
     cursor: pointer;
 }
@@ -105,4 +125,22 @@ h3 {
     align-items: center;
     overflow-y: auto;
     padding: 20px;
+
+    &::-webkit-scrollbar {
+        width: 5px;
+        cursor: pointer;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: $color-secondary;
+        border-radius: 10px;
+
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $color-primary;
+        border-radius: 10px;
+        border: 1px solid $color-secondary;
+
+    }
 }
