@@ -12,20 +12,25 @@ export default {
 
 <template>
     <header>
-        <div id="logo-container">
-            <img src="../assets/header-logo.png" alt="logo">
+        <div class="header-left">
+            <div id="logo-container">
+                <a href="#"><img src="../assets/header-logo.png" alt="logo"></a>
+            </div>
+            <ul class="nav-list">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Serie TV</a></li>
+                <li><a href="#">Film</a></li>
+                <li><a href="#">Originali</a></li>
+                <li><a href="#">Aggiunti di recente</a></li>
+                <li><a href="#">La mia lista</a></li>
+            </ul>
         </div>
-        <ul class="nav-list">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Serie TV</a></li>
-            <li><a href="#">Film</a></li>
-            <li><a href="#">Originali</a></li>
-            <li><a href="#">Aggiunti di recente</a></li>
-            <li><a href="#">La mia lista</a></li>
-        </ul>
         <div id="search-container">
             <input type="text" placeholder="Search" v-model="store.searchText">
             <button @click="$emit('doSearch')">Search</button>
+            <span id="bell"><i class="fa-solid fa-bell"></i></span>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png" alt="user avatar">
+            <span><i class="fa-solid fa-chevron-down"></i></span>
         </div>
     </header>
 </template>
@@ -44,36 +49,56 @@ header {
 
 }
 
-#logo {
-    color: $color-primary;
-    font-size: 60px;
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 #search-container {
     display: flex;
     align-items: center;
+    gap: 15px;
+    color: white;
 
 
     input {
         height: 35px;
         width: 200px;
         padding: 5px;
-        background-color: $color-secondary;
+        background-color: lighten($color-secondary, 10);
+        border: 0;
         color: white;
-        border: solid 1px white;
+        border-radius: 5px;
         font-family: "Bebas Neue", cursive;
     }
 
     button {
         height: 35px;
         padding: 0 20px;
-        margin-left: 10px;
         background-color: $color-primary;
-        color: white;
         border: 0;
+        color: white;
         border-radius: 5px;
         cursor: pointer;
         font-family: "Bebas Neue", cursive;
+    }
+
+    #bell {
+        font-size: 22px;
+        line-height: 22px;
+        cursor: pointer;
+    }
+
+    img {
+        display: block;
+        height: 35px;
+        border-radius: 2px;
+        cursor: pointer;
+    }
+
+    i {
+        cursor: pointer;
     }
 }
 
@@ -88,6 +113,7 @@ header {
         display: block;
         height: 50px;
         width: 190px;
+        cursor: pointer;
     }
 }
 
@@ -101,12 +127,13 @@ header {
     list-style: none;
     color: white;
     gap: 30px;
-    font-size: 20px;
+    font-size: 15px;
 
     a {
         text-decoration: none;
         color: white;
         cursor: pointer;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
 
         &:hover {
             text-decoration: underline;

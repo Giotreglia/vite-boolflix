@@ -9,6 +9,24 @@
 
 html {
     background-color: $color-secondary;
+
+    &::-webkit-scrollbar {
+        width: 10px;
+        cursor: pointer;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: $color-secondary;
+        border-radius: 10px;
+
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $color-primary;
+        border-radius: 10px;
+        border: 1px solid $color-secondary;
+
+    }
 }
 
 body {
