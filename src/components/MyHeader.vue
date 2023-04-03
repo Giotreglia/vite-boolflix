@@ -71,7 +71,7 @@ header {
 
     input {
         height: 35px;
-        width: 200px;
+        width: 100%;
         padding: 5px;
         background-color: lighten($color-secondary, 10);
         border: 0;
@@ -117,14 +117,14 @@ header {
 #logo-container {
     position: relative;
     display: flex;
+    min-width: 180px;
     align-items: center;
     overflow: hidden;
     padding: 20px;
 
     img {
         display: block;
-        height: 50px;
-        width: 190px;
+        width: 70%;
         cursor: pointer;
     }
 }
@@ -140,6 +140,7 @@ header {
     color: white;
     gap: 30px;
     font-size: 15px;
+    display: none;
 
     a {
         text-decoration: none;
@@ -150,6 +151,12 @@ header {
         &:hover {
             text-decoration: underline;
         }
+    }
+}
+
+@media all and (min-width: 1200px) {
+    .nav-list {
+        display: flex;
     }
 }
 </style>
