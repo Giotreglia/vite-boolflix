@@ -44,8 +44,8 @@ export default {
                     <img :src="`https://image.tmdb.org/t/p/w342${movie.poster_path}`" :alt="movie.original_name">
                 </div>
                 <div class="flip-card-back">
-                    {{ movie.title }} /
-                    {{ movie.original_title }}
+                    <h2>{{ movie.title }}</h2>
+                    <h2>{{ movie.original_title }}</h2>
                     <p>{{ genreRecognizer(movie.genre_ids[0]) }}</p>
 
 

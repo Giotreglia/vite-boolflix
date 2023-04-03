@@ -45,8 +45,8 @@ export default {
                 </div>
 
                 <div class="flip-card-back">
-                    {{ movie.name }} /
-                    {{ movie.original_name }}
+                    <h2>{{ movie.name }}</h2>
+                    <h2>{{ movie.original_name }}</h2>
                     <p>{{ genreRecognizer(movie.genre_ids[0]) }}</p>
 
                     <StarsVote :vote="movie.vote_average" />
