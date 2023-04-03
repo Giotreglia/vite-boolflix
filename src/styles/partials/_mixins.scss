@@ -1,0 +1,23 @@
+@use '../partials/variables' as *;
+
+@mixin scrollbar {
+    &::-webkit-scrollbar {
+        width: 100vw;
+        height: 6px;
+        width: 6px;
+        cursor: pointer;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: $color-secondary;
+        border-radius: 10px;
+
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $color-primary;
+        border-radius: 10px;
+        border: 1px solid $color-secondary;
+
+    }
+}

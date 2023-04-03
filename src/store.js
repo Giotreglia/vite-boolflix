@@ -6,6 +6,7 @@ export const store = reactive(
         searchText: '',
         searchMovieResults: [],
         searchSeriesResults: [],
+        popularMovies: [],
         genres: []
     }
 );

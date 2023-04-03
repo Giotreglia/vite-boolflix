@@ -42,7 +42,7 @@ export default {
 
 header {
     height: 100px;
-    background-color: rgba($color-secondary, 0.9);
+    background-color: rgba($color-secondary, 0.5);
     display: flex;
     justify-content: space-between;
     padding: 10px 30px;
@@ -52,6 +52,7 @@ header {
     left: 0;
     width: 100%;
     z-index: 1;
+    box-shadow: 2px 2px 2px rgba($color-secondary, 0.5);
 
 }
 

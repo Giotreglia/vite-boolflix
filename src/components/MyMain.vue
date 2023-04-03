@@ -28,6 +28,6 @@ export default {
 @use '../styles/partials/variables' as *;
 
 main {
-    padding-top: 100px;
+    padding-top: 20px;
 }
 </style>
