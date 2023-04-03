@@ -16,16 +16,22 @@ export default {
             return new URL(`../assets/${img}`, import.meta.url).href;
         },
         genreRecognizer(movieId) {
-            let genere = '';
-            this.store.genres.forEach((element, i) => {
+            let genere = [];
+            this.store.genres.forEach(element => {
                 if (movieId == element.id) {
-                    genere = element.name
+                    genere.push(element.name);
                 }
-                console.log(genere);
-                return genere;
+
             });
+            console.log(genere);
+
+            if (genere.length > 1) {
+                return genere[0] + genere[1];
+            } else {
+                return genere[0];
+            }
         }
-    },
+    }
 }
 </script>
 
@@ -39,8 +45,9 @@ export default {
                 </div>
                 <div class="flip-card-back">
                     {{ movie.title }} /
-                    {{ movie.original_title }} /
-                    {{ genreRecognizer(movie.genre_ids[0]) }}
+                    {{ movie.original_title }}
+                    <p>{{ genreRecognizer(movie.genre_ids[0]) }}</p>
+
 
                     <StarsVote :vote="movie.vote_average" />
 

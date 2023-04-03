@@ -65,6 +65,8 @@ export default {
         right: 20px;
         display: flex;
         flex-direction: column;
+        background-color: rgba($color-secondary, 0.5);
+        border-radius: 5px;
         align-items: flex-end;
         padding: 20px;
 
@@ -83,10 +85,9 @@ export default {
         .info-btn {
             padding: 6px 15px;
             margin-left: 10px;
-            font-size: 20px;
+            font-size: 16px;
             border: 0;
             border-radius: 5px;
-            font-weight: bold;
             cursor: pointer;
             transition: all 0.1s;
 
