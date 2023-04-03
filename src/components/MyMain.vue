@@ -3,9 +3,9 @@ import { store } from '../store';
 import MovieCard from './MovieCard.vue';
 import SerieCard from './SerieCard.vue';
 export default {
+    name: 'MyMain',
     data() {
         return {
-            name: 'MyMain',
             store,
         }
     },
@@ -26,4 +26,8 @@ export default {
 <style lang="scss" scoped>
 @use '../styles/general.scss';
 @use '../styles/partials/variables' as *;
+
+main {
+    padding-top: 100px;
+}
 </style>

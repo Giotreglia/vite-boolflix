@@ -1,9 +1,13 @@
 <script>
 import { store } from '../store';
+import StarsVote from './StarsVote.vue';
 export default {
+    name: 'SerieCard',
+    components: {
+        StarsVote
+    },
     data() {
         return {
-            name: 'SerieCard',
             store
         }
     },
@@ -27,14 +31,8 @@ export default {
                 <div class="flip-card-back">
                     {{ movie.name }} /
                     {{ movie.original_name }} /
-                    <div>
-                        <span class="stars" v-for="stars in Math.floor(movie.vote_average / 2) + 1">
-                            <i class="fa-solid fa-star"></i>
-                        </span>
-                        <span v-for="stars in (5 - (Math.floor(movie.vote_average / 2) + 1))">
-                            <i class="fa-regular fa-star"></i>
-                        </span>
-                    </div>
+
+                    <StarsVote :vote="movie.vote_average" />
 
                     <img class="flag" :src="getImagePath(`flags/${movie.original_language}.svg`)"
                         :alt="movie.original_language">

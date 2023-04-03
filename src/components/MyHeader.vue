@@ -2,6 +2,7 @@
 import { store } from '../store';
 export default {
     name: 'MyHeader',
+    emits: ['doSearch'],
     data() {
         return {
             store
@@ -26,7 +27,7 @@ export default {
             </ul>
         </div>
         <div id="search-container">
-            <input type="text" placeholder="Search" v-model="store.searchText">
+            <input type="text" placeholder="Search" v-model="store.searchText" @keyup.enter="$emit('doSearch')">
             <button @click="$emit('doSearch')">Search</button>
             <span id="bell"><i class="fa-solid fa-bell"></i></span>
             <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png" alt="user avatar">
@@ -41,11 +42,16 @@ export default {
 
 header {
     height: 100px;
-    background-color: $color-secondary;
+    background-color: rgba($color-secondary, 0.9);
     display: flex;
     justify-content: space-between;
     padding: 10px 30px;
     align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
 
 }
 

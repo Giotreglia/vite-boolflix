@@ -1,15 +1,29 @@
 <script>
 import { store } from '../store';
+import StarsVote from './StarsVote.vue';
 export default {
+    name: 'MovieCard',
+    components: {
+        StarsVote
+    },
     data() {
         return {
-            name: 'MovieCard',
             store
         }
     },
     methods: {
         getImagePath: function (img) {
             return new URL(`../assets/${img}`, import.meta.url).href;
+        },
+        genreRecognizer(movieId) {
+            let genere = '';
+            this.store.genres.forEach((element, i) => {
+                if (movieId == element.id) {
+                    genere = element.name
+                }
+                console.log(genere);
+                return genere;
+            });
         }
     },
 }
@@ -26,14 +40,9 @@ export default {
                 <div class="flip-card-back">
                     {{ movie.title }} /
                     {{ movie.original_title }} /
-                    <div>
-                        <span class="stars" v-for="stars in Math.floor(movie.vote_average / 2) + 1">
-                            <i class="fa-solid fa-star"></i>
-                        </span>
-                        <span v-for="stars in (5 - (Math.floor(movie.vote_average / 2) + 1))">
-                            <i class="fa-regular fa-star"></i>
-                        </span>
-                    </div>
+                    {{ genreRecognizer(movie.genre_ids[0]) }}
+
+                    <StarsVote :vote="movie.vote_average" />
 
                     <img class="flag" :src="getImagePath(`flags/${movie.original_language}.svg`)"
                         :alt="movie.original_language">
