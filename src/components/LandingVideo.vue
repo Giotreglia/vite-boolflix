@@ -18,7 +18,7 @@ export default {
 <template>
     <section id="video">
         <div class="video-container">
-            <video controls autoplay loop>
+            <video autoplay loop>
                 <source src="../assets/video1.mp4" type="video/mp4">
             </video>
             <div class="video-details">
