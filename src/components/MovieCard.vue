@@ -34,7 +34,7 @@ export default {
 
 <template>
     <h3>Film</h3>
-    <ul class="cards-container" v-if="store.searchMovieResults">
+    <ul id="cards-container" v-if="store.searchMovieResults">
         <li class="card flip-card" v-for="(movie, i) in store.searchMovieResults" :key="i">
             <div class="flip-card-inner">
                 <div class="flip-card-front">

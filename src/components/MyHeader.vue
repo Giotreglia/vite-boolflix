@@ -28,7 +28,7 @@ export default {
         </div>
         <div id="search-container">
             <input type="text" placeholder="Search" v-model="store.searchText" @keyup.enter="$emit('doSearch')">
-            <button @click="$emit('doSearch')">Search</button>
+            <button @click="$emit('doSearch')"><a href="#cards-container">Search</a></button>
             <span id="bell"><i class="fa-solid fa-bell"></i></span>
             <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png" alt="user avatar">
             <span><i class="fa-solid fa-chevron-down"></i></span>
@@ -89,6 +89,11 @@ header {
         border-radius: 5px;
         cursor: pointer;
         font-family: "Bebas Neue", cursive;
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
     }
 
     #bell {

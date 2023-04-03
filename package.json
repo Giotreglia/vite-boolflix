@@ -12,7 +12,8 @@
     "@fontsource/bebas-neue": "^4.5.9",
     "axios": "^1.3.4",
     "sass": "^1.60.0",
-    "vue": "^3.2.47"
+    "vue": "^3.2.47",
+    "vue-horizontal-scroll": "^0.2.4"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.1.0",

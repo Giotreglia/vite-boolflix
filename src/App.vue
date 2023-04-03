@@ -11,7 +11,7 @@ export default {
     MyHeader,
     MyMain,
     PopularCarousel,
-    LandingVideo
+    LandingVideo,
   },
 
   data() {

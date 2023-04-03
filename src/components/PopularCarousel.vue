@@ -10,6 +10,9 @@ export default {
     methods: {
         getImagePath: function (img) {
             return new URL(`../assets/${img}`, import.meta.url).href;
+        },
+        scrollLeft() {
+
         }
     }
 }
@@ -18,6 +21,7 @@ export default {
 <template>
     <section id="video">
         <h3>I titoli del momento</h3>
+
         <div class="carousel-container">
             <div class="carousel-item" v-for="(movie, i) in store.popularMovies" :key="i">
                 <img :src="`https://image.tmdb.org/t/p/w1280${movie.poster_path}`" :alt="movie.original_name">
@@ -29,7 +33,11 @@ export default {
                     <h3 class="details-title">{{ movie.name || movie.title }}</h3>
                 </div>
             </div>
+            <div class="chevron">
+                <i class="fa-solid fa-chevron-right"></i>
+            </div>
         </div>
+
     </section>
 </template>
 
@@ -103,6 +111,21 @@ export default {
 
         .play-btn {
             background-color: $color-primary;
+            color: white;
+        }
+    }
+
+    .chevron {
+        font-size: 70px;
+        color: rgba(white, 0.5);
+        position: absolute;
+        top: 50%;
+        right: 30px;
+        cursor: pointer;
+        transition: all 0.1s;
+
+        &:hover {
+            scale: 1.1;
             color: white;
         }
     }
