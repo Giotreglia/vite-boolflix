@@ -23,7 +23,6 @@ export default {
                 }
 
             });
-            console.log(genere);
 
             return genere[0];
 
@@ -44,13 +43,21 @@ export default {
                 <div class="flip-card-back">
                     <h2>{{ movie.name }}</h2>
                     <h2>{{ movie.original_name }}</h2>
-                    <p>{{ genreRecognizer(movie.genre_ids[0]) }} <span v-if="movie.genre_ids.length > 1">{{
-                        genreRecognizer(movie.genre_ids[1]) }}</span></p>
+
+                    <p>{{ genreRecognizer(movie.genre_ids[0]) }}
+                        <span v-if="movie.genre_ids.length > 1">
+                            / {{ genreRecognizer(movie.genre_ids[1]) }}
+                        </span>
+                    </p>
 
                     <StarsVote :vote="movie.vote_average" />
 
                     <img class="flag" :src="getImagePath(`flags/${movie.original_language}.svg`)"
                         :alt="movie.original_language">
+                    <div>
+                        <p>cast:</p>
+                        <span class="cast" v-for="cast in store.SerieCast[i]">{{ cast.name }}, </span>
+                    </div>
                     <p>{{ movie.overview }}</p>
                 </div>
             </div>
