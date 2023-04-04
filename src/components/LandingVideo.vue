@@ -19,7 +19,7 @@ export default {
     <section id="video">
         <div class="video-container">
             <video controls autoplay loop>
-                <source src="../assets/video4.mp4" type="video/mp4">
+                <source src="../assets/video1.mp4" type="video/mp4">
             </video>
             <div class="video-details">
                 <div class="video-buttons">
