@@ -52,6 +52,8 @@ export default {
             <li class="card flip-card" v-for="(movie, i) in store.searchSeriesResults" :key="i">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
+                        <img src="../assets/immagine-non-disponibile.png" :alt="movie.original_name"
+                            v-if="movie.poster_path == null">
                         <img :src="`https://image.tmdb.org/t/p/w342${movie.poster_path}`" :alt="movie.original_name">
                     </div>
 
