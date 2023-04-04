@@ -44,6 +44,7 @@ export default {
                     <h2>{{ movie.name }}</h2>
                     <h2>{{ movie.original_name }}</h2>
 
+                    <span>Genere:</span>
                     <p>{{ genreRecognizer(movie.genre_ids[0]) }}
                         <span v-if="movie.genre_ids.length > 1">
                             / {{ genreRecognizer(movie.genre_ids[1]) }}
@@ -56,7 +57,9 @@ export default {
                         :alt="movie.original_language">
                     <div>
                         <p>cast:</p>
-                        <span class="cast" v-for="cast in store.SerieCast[i]">{{ cast.name }}, </span>
+                        <span class="cast" v-for="cast in store.SerieCast[i]">
+                            {{ cast.name }}
+                        </span>
                     </div>
                     <p>{{ movie.overview }}</p>
                 </div>

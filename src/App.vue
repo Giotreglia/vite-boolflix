@@ -33,6 +33,7 @@ export default {
         })
         .then(response => {
           this.store.searchMovieResults = response.data.results;
+          this.store.MovieCast = [];
 
           /* Cast */
           this.store.searchMovieResults.forEach(element => {
@@ -58,7 +59,7 @@ export default {
         })
         .then(response => {
           this.store.searchSeriesResults = response.data.results;
-
+          this.store.SerieCast = [];
           /* Cast */
           this.store.searchSeriesResults.forEach(element => {
 

@@ -131,3 +131,12 @@ h3 {
 
     @include scrollbar;
 }
+
+.cast:not(:last-child):after {
+    content: ', ';
+
+}
+
+.cast:last-child::after {
+    content: '.';
+}
