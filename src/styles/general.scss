@@ -34,6 +34,7 @@ html {
 
 body {
     font-family: "Bebas Neue", cursive;
+    padding-bottom: 400px;
 }
 
 main {
@@ -139,4 +140,27 @@ h3 {
 
 .cast:last-child::after {
     content: '.';
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+
+    select {
+        height: 30px;
+        background-color: lighten($color-secondary, 20);
+        color: white;
+        border: 0;
+        border-radius: 5px;
+        padding: 5px;
+        font-family: "Bebas Neue", cursive;
+        letter-spacing: 1px;
+        line-height: 20px;
+        cursor: pointer;
+    }
+}
+
+.no-result {
+    color: white;
+    margin-left: 50px;
 }

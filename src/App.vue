@@ -33,9 +33,9 @@ export default {
         })
         .then(response => {
           this.store.searchMovieResults = response.data.results;
-          this.store.MovieCast = [];
 
           /* Cast */
+          this.store.MovieCast = [];
           this.store.searchMovieResults.forEach(element => {
 
             axios.get(`https://api.themoviedb.org/3/movie/${element.id}/credits?api_key=${this.store.api_key}&language=it-IT`)
@@ -59,8 +59,9 @@ export default {
         })
         .then(response => {
           this.store.searchSeriesResults = response.data.results;
-          this.store.SerieCast = [];
+
           /* Cast */
+          this.store.SerieCast = [];
           this.store.searchSeriesResults.forEach(element => {
 
             axios.get(`https://api.themoviedb.org/3/tv/${element.id}/credits?api_key=${this.store.api_key}&language=it-IT`)

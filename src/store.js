@@ -9,6 +9,10 @@ export const store = reactive(
         popularMovies: [],
         genres: [],
         MovieCast: [],
-        SerieCast: []
+        SerieCast: [],
+        optionSelectedMovie: 'all',
+        optionSelectedSerie: 'all',
+        filteredMovies: [],
+        filteredSeries: []
     }
 );

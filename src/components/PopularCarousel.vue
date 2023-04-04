@@ -33,9 +33,6 @@ export default {
                     <h3 class="details-title">{{ movie.name || movie.title }}</h3>
                 </div>
             </div>
-            <div class="chevron">
-                <i class="fa-solid fa-chevron-right"></i>
-            </div>
         </div>
 
     </section>
@@ -111,21 +108,6 @@ export default {
 
         .play-btn {
             background-color: $color-primary;
-            color: white;
-        }
-    }
-
-    .chevron {
-        font-size: 70px;
-        color: rgba(white, 0.5);
-        position: absolute;
-        top: 50%;
-        right: 30px;
-        cursor: pointer;
-        transition: all 0.1s;
-
-        &:hover {
-            scale: 1.1;
             color: white;
         }
     }
