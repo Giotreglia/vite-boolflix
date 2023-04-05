@@ -15,6 +15,8 @@ export default {
         getImagePath: function (img) {
             return new URL(`../assets/${img}`, import.meta.url).href;
         },
+
+        /* Funzione per tradurre il genere in parola dall'id */
         genreRecognizer(movieId) {
             let genere = [];
             this.store.genres.forEach(element => {
@@ -27,12 +29,16 @@ export default {
             return genere[0];
 
         },
+
+        /* Funzione per filtrare i risultati per genere dalla select */
         filterSeriesResults() {
             let results = this.store.searchSeriesResults.filter(x => x.genre_ids[0] === this.store.optionSelectedSerie)
             this.store.filteredSeries = results;
         }
     },
 }
+
+
 </script>
 
 <template>
@@ -48,19 +54,28 @@ export default {
         </div>
 
         <!-- Series results -->
-        <ul id="cards-container" v-if="store.optionSelectedSerie === 'all'">
+
+        <!-- Not filtered results -->
+        <ul class="cards-container" v-if="store.optionSelectedSerie === 'all'">
             <li class="card flip-card" v-for="(movie, i) in store.searchSeriesResults" :key="i">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
+
+                        <!-- Serie Image -->
                         <img src="../assets/immagine-non-disponibile.png" :alt="movie.original_name"
                             v-if="movie.poster_path == null">
                         <img :src="`https://image.tmdb.org/t/p/w342${movie.poster_path}`" :alt="movie.original_name">
-                    </div>
 
+                    </div>
                     <div class="flip-card-back">
+
+                        <!-- Serie Details -->
+
+                        <!-- Title -->
                         <h2>{{ movie.name }}</h2>
                         <h2>{{ movie.original_name }}</h2>
 
+                        <!-- Genre -->
                         <span>Genere:</span>
                         <p>{{ genreRecognizer(movie.genre_ids[0]) }}
                             <span v-if="movie.genre_ids.length > 1">
@@ -68,34 +83,52 @@ export default {
                             </span>
                         </p>
 
+                        <!-- Vote -->
                         <StarsVote :vote="movie.vote_average" />
 
+                        <!-- Language -->
                         <img class="flag" :src="getImagePath(`flags/${movie.original_language}.svg`)"
                             :alt="movie.original_language">
+
+                        <!-- Cast -->
                         <div>
                             <p>cast:</p>
                             <span class="cast" v-for="cast in store.SerieCast[i]">
                                 {{ cast.name }}
                             </span>
                         </div>
+
+                        <!-- Description -->
                         <p>{{ movie.overview }}</p>
                     </div>
                 </div>
             </li>
         </ul>
 
-        <ul id="cards-container" v-else>
+        <!-- Filtered results -->
+        <ul class="cards-container" v-else>
+
             <h1 class="no-result" v-if="store.filteredSeries.length == 0">Nessun risultato</h1>
+
+
             <li class="card flip-card" v-for="(movie, i) in store.filteredSeries" :key="i" v-else>
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
+
+                        <!-- Serie Image -->
                         <img :src="`https://image.tmdb.org/t/p/w342${movie.poster_path}`" :alt="movie.original_name">
+
                     </div>
 
                     <div class="flip-card-back">
+
+                        <!-- Serie Details -->
+
+                        <!-- Title -->
                         <h2>{{ movie.name }}</h2>
                         <h2>{{ movie.original_name }}</h2>
 
+                        <!-- Genre -->
                         <span>Genere:</span>
                         <p>{{ genreRecognizer(movie.genre_ids[0]) }}
                             <span v-if="movie.genre_ids.length > 1">
@@ -103,16 +136,22 @@ export default {
                             </span>
                         </p>
 
+                        <!-- Vote -->
                         <StarsVote :vote="movie.vote_average" />
 
+                        <!-- Language -->
                         <img class="flag" :src="getImagePath(`flags/${movie.original_language}.svg`)"
                             :alt="movie.original_language">
+
+                        <!-- Cast -->
                         <div>
                             <p>cast:</p>
                             <span class="cast" v-for="cast in store.SerieCast[i]">
                                 {{ cast.name }}
                             </span>
                         </div>
+
+                        <!-- Description -->
                         <p>{{ movie.overview }}</p>
                     </div>
                 </div>

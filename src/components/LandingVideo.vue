@@ -16,11 +16,16 @@ export default {
 </script>
 
 <template>
+    <!-- Landing Video -->
     <section id="video">
+
+        <!-- Video -->
         <div class="video-container">
             <video controls autoplay loop>
                 <source src="../assets/video1.mp4" type="video/mp4">
             </video>
+
+            <!-- Video buttons -->
             <div class="video-details">
                 <div class="video-buttons">
                     <button class="info-btn"><i class="fa-solid fa-circle-info"></i> More Info</button>

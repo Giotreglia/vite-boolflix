@@ -9,10 +9,14 @@ export default {
 
 <template>
     <div>
-        <span class="stars" v-for="stars in Math.floor(vote / 2) + 1">
+
+        <!-- Stelle piene -->
+        <span class="stars" v-for="stars in Math.ceil(vote / 2)">
             <i class="fa-solid fa-star"></i>
         </span>
-        <span v-for="stars in (5 - (Math.floor(vote / 2) + 1))">
+
+        <!-- Stelle vuote -->
+        <span v-for="stars in (5 - Math.ceil(vote / 2))">
             <i class="fa-regular fa-star"></i>
         </span>
     </div>

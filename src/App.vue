@@ -35,7 +35,11 @@ export default {
           this.store.searchMovieResults = response.data.results;
 
           /* Cast */
+
+          /* Cast reset */
           this.store.MovieCast = [];
+
+          /* Cast search */
           this.store.searchMovieResults.forEach(element => {
 
             axios.get(`https://api.themoviedb.org/3/movie/${element.id}/credits?api_key=${this.store.api_key}&language=it-IT`)
@@ -61,7 +65,11 @@ export default {
           this.store.searchSeriesResults = response.data.results;
 
           /* Cast */
+
+          /* Cast reset */
           this.store.SerieCast = [];
+
+          /* Cast search */
           this.store.searchSeriesResults.forEach(element => {
 
             axios.get(`https://api.themoviedb.org/3/tv/${element.id}/credits?api_key=${this.store.api_key}&language=it-IT`)
@@ -86,6 +94,8 @@ export default {
     },
   },
   created() {
+
+    /* Popular movies request */
     axios.get(`https://api.themoviedb.org/3/trending/all/week?api_key=e006ef27465ae9c185e1be8a91b86d0e`)
       .then(response => {
         store.popularMovies = response.data.results;

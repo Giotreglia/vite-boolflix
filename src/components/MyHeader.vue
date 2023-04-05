@@ -13,10 +13,14 @@ export default {
 
 <template>
     <header>
+
+        <!-- Logo -->
         <div class="header-left">
             <div id="logo-container">
                 <a href="#"><img src="../assets/header-logo.png" alt="logo"></a>
             </div>
+
+            <!-- Nav-list -->
             <ul class="nav-list">
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Serie TV</a></li>
@@ -26,9 +30,15 @@ export default {
                 <li><a href="#">La mia lista</a></li>
             </ul>
         </div>
+
+        <!-- Search -->
         <div id="search-container">
+
+            <!-- Search input -->
             <input type="text" placeholder="Search" v-model="store.searchText" @keyup.enter="$emit('doSearch')">
             <button @click="$emit('doSearch')"><a href="#cards-container">Search</a></button>
+
+            <!-- User account area -->
             <span id="bell"><i class="fa-solid fa-bell"></i></span>
             <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png" alt="user avatar">
             <span><i class="fa-solid fa-chevron-down"></i></span>
