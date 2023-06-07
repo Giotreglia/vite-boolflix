@@ -1,11 +1,5 @@
 
-<!---
-THUMBNAIL GIF
--->
 
-<p align="center">
-  <img src="public/boolflix-gif.gif" alt="gif" width="100%"/>
-</p>
 
 <!---
 LOGO
@@ -13,6 +7,14 @@ LOGO
 
 <p align="center">
   <img src="src\assets\header-logo.png" alt="LOGO"/>
+</p>
+
+<!---
+THUMBNAIL GIF
+-->
+
+<p align="center">
+  <img src="public/boolflix-gif.gif" alt="gif" width="100%"/>
 </p>
 
 <!---
