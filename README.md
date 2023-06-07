@@ -4,7 +4,7 @@ THUMBNAIL GIF
 -->
 
 <p align="center">
-  <img src="public/boolflix-gif.gif" alt="gif"/>
+  <img src="public/boolflix-gif.gif" alt="gif" width="100%"/>
 </p>
 
 <!---
